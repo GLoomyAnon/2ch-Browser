@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res/com.vortexwolf.chan" >
+    xmlns:local="http://schemas.android.com/apk/res/com.vortexwolf.chan2" >
     <PreferenceScreen
         android:key="pref_screen_dvach_key"
         android:title="@string/pref_screen_dvach"
@@ -12,7 +12,7 @@
             android:summary="@string/pref_name_summary"
             android:inputType="text"
             android:singleLine="true" />
-        <com.vortexwolf.chan.settings.PasscodePreference
+        <com.vortexwolf.chan2.settings.PasscodePreference
             android:key="@string/pref_passcode_key"
             android:title="@string/pref_passcode"
             android:summary="@string/pref_passcode_summary"
@@ -188,7 +188,7 @@
                 android:summary="@string/pref_file_cache_no_limit_summary"
                 android:title="@string/pref_file_cache_no_limit" />
 
-            <com.vortexwolf.chan.settings.CacheSizePreference
+            <com.vortexwolf.chan2.settings.CacheSizePreference
                 android:key="@string/pref_clear_cache_key"
                 android:title="@string/pref_file_cache_clear" />
         </PreferenceCategory>
@@ -199,7 +199,7 @@
                 android:summary="@string/pref_auto_refresh_summary"
                 android:title="@string/pref_auto_refresh" />
 
-            <com.vortexwolf.chan.settings.SeekBarPreference
+            <com.vortexwolf.chan2.settings.SeekBarPreference
                 android:defaultValue="60"
                 android:dependency="@string/pref_auto_refresh_key"
                 android:dialogTitle="@string/pref_auto_refresh_interval_dialog_title"

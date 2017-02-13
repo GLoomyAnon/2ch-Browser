@@ -9,17 +9,15 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.http.impl.client.DefaultHttpClient;
-
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.text.TextUtils;
 
-import com.vortexwolf.chan.common.library.MyLog;
-import com.vortexwolf.chan.common.utils.AppearanceUtils;
-import com.vortexwolf.chan.services.http.HttpBitmapReader;
+import com.vortexwolf.chan2.common.library.MyLog;
+import com.vortexwolf.chan2.common.utils.AppearanceUtils;
+import com.vortexwolf.chan2.services.http.HttpBitmapReader;
 
 /**
  * HttpImageManager uses 3-level caching to download and store network images.

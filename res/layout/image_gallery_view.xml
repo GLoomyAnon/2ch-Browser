@@ -14,7 +14,7 @@
         android:visibility="gone"
         android:max="100" />
     
-    <com.vortexwolf.chan.common.controls.ExtendedViewPager
+    <com.vortexwolf.chan2.common.controls.ExtendedViewPager
         android:id="@+id/view_pager"
         android:layout_width="fill_parent"
         android:layout_height="0dip"

@@ -64,7 +64,7 @@
         android:textStyle="bold"
         android:visibility="gone" />"
 
-    <com.vortexwolf.chan.common.controls.EllipsizingTextView
+    <com.vortexwolf.chan2.common.controls.EllipsizingTextView
         android:id="@+id/comment"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

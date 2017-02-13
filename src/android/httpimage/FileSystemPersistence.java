@@ -9,9 +9,9 @@ import java.io.IOException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.vortexwolf.chan.common.library.MyLog;
-import com.vortexwolf.chan.common.utils.IoUtils;
-import com.vortexwolf.chan.services.CacheDirectoryManager;
+import com.vortexwolf.chan2.common.library.MyLog;
+import com.vortexwolf.chan2.common.utils.IoUtils;
+import com.vortexwolf.chan2.services.CacheDirectoryManager;
 
 /**
  * File system implementation of persistent storage for downloaded images.

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <com.vortexwolf.chan.common.controls.ExtendedImageView
+    <com.vortexwolf.chan2.common.controls.ExtendedImageView
         android:id="@+id/thumbnail"
         android:layout_width="@dimen/thumbnail_size"
         android:layout_height="@dimen/thumbnail_size"

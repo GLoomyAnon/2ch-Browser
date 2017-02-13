@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res/com.vortexwolf.chan"
+    xmlns:local="http://schemas.android.com/apk/res/com.vortexwolf.chan2"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="?postBackground"
@@ -118,7 +118,7 @@
             android:orientation="horizontal"
             android:visibility="visible">
 
-            <com.vortexwolf.chan.common.controls.DynamicWidthImageView
+            <com.vortexwolf.chan2.common.controls.DynamicWidthImageView
                 android:id="@+id/badge_image"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/badge_size"
@@ -256,7 +256,7 @@
             android:textStyle="bold" 
             android:visibility="gone" />
         
-        <com.vortexwolf.chan.common.controls.JellyBeanSpanFixTextView
+        <com.vortexwolf.chan2.common.controls.JellyBeanSpanFixTextView
             android:id="@+id/comment"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
