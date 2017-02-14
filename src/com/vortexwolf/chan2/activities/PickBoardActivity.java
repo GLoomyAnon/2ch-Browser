@@ -3,6 +3,7 @@ package com.vortexwolf.chan2.activities;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -44,6 +45,7 @@ import com.vortexwolf.chan2.settings.ApplicationSettings;
 import com.vortexwolf.chan2.settings.SettingsEntity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
@@ -257,15 +259,17 @@ public class PickBoardActivity extends ListActivity implements IBoardsListCallba
         String currentCategory = null;
 
         for (String category: categorySequenceToBeShown) {
+            List<String> visibleBoards = Arrays.asList(getResources().getStringArray(R.array.allowed_boards));
+
             for (BoardModel board : this.mBoards) {
                 // ignore all boards except of matching category.
                 if (!board.getCategory().equals(category)) {
                     continue;
                 }
-//                //ignore invisible boards
-//                if(!board.isVisible() && !this.mSettings.isDisplayAllBoards()){
-//                    continue;
-//                }
+                //ignore invisible boards
+                if(!visibleBoards.contains(board.getId()) && !this.mSettings.isDisplayAllBoards()){
+                    continue;
+                }
 
                 // add group header
                 if (board.getCategory() != null && !board.getCategory().equals(currentCategory)) {
