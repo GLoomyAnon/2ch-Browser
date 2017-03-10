@@ -25,6 +25,10 @@
         android:icon="@drawable/ic_menu_browser"
         android:title="@string/menu_open_browser"/>
     <item
+        android:id="@+id/menu_search_id"
+        android:icon="?iconSearch"
+        android:title="@string/menu_search"/>
+    <item
         android:id="@+id/add_remove_favorites_menu_id"
         android:title="@string/menu_add_favorites"/>
     <item

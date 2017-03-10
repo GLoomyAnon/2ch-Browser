@@ -53,11 +53,14 @@
         <activity
             android:name=".activities.PostsListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
-
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.vortexwolf.chan.activities.SearchableActivity" />
         </activity>
         <activity
             android:name=".activities.SearchableActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />

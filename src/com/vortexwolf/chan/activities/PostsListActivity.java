@@ -130,6 +130,18 @@ public class PostsListActivity extends BaseListActivity {
     }
 
     @Override
+    public boolean onSearchRequested() {
+        Bundle data = new Bundle();
+        data.putString(Constants.EXTRA_WEBSITE, this.mWebsite.name());
+        data.putString(Constants.EXTRA_BOARD_NAME, this.mBoardName);
+        data.putString(Constants.EXTRA_THREAD_NUMBER, this.mThreadNumber);
+
+        this.startSearch(null, false, data, false);
+
+        return true;
+    }
+
+    @Override
     protected void onDestroy() {
         this.mAutoRefreshTimer.stop();
 
@@ -269,6 +281,9 @@ public class PostsListActivity extends BaseListActivity {
                 break;
             case R.id.add_menu_id:
                 this.navigateToAddNewPost();
+                break;
+            case R.id.menu_search_id:
+                this.onSearchRequested();
                 break;
             case R.id.download_all_files_menu_id:
                 List<String> filePaths = this.mAdapter.getAllPostFiles();

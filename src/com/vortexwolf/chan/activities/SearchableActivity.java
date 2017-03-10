@@ -51,6 +51,7 @@ public class SearchableActivity extends BaseListActivity {
 
     private String mSearchQuery = null;
     private String mBoardName = null;
+    private String mThreadNumber = null;
     private IWebsite mWebsite;
 
     @Override
@@ -195,6 +196,7 @@ public class SearchableActivity extends BaseListActivity {
                 this.mWebsite = Websites.getDefault();
             }
             this.mBoardName = b.getString(Constants.EXTRA_BOARD_NAME);
+            this.mThreadNumber = b.getString(Constants.EXTRA_THREAD_NUMBER);
 
             this.setAdapter(this.mBoardName);
             this.refresh();
@@ -246,7 +248,7 @@ public class SearchableActivity extends BaseListActivity {
 
             PostModel[] posts = postsListModel.getPosts();
             if (posts != null) {
-                SearchableActivity.this.mAdapter.setAdapterData(posts);
+                SearchableActivity.this.mAdapter.setAdapterData(posts, mThreadNumber);
             } else {
                 SearchableActivity.this.mAdapter.clear();
                 String error = postsListModel.getError() != null
@@ -261,13 +263,15 @@ public class SearchableActivity extends BaseListActivity {
             SearchableActivity.this.switchToErrorView(error);
             if (error != null && error.startsWith("503")) {
                 String url = mUrlBuilder.getPostingUrlHtml();
-                new CloudflareCheckService(url, SearchableActivity.this, new ICloudflareCheckListener(){
+                new CloudflareCheckService(url, SearchableActivity.this, new ICloudflareCheckListener() {
                     public void onSuccess() {
                         refresh();
                     }
+
                     public void onStart() {
                         showError(getString(R.string.notification_cloudflare_check_started));
                     }
+
                     public void onTimeout() {
                         showError(getString(R.string.error_cloudflare_check_timeout));
                     }

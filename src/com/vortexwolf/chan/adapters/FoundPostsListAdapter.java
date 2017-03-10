@@ -66,10 +66,18 @@ public class FoundPostsListAdapter extends ArrayAdapter<PostItemViewModel> imple
         this.mIsBusy = value;
     }
 
-    public void setAdapterData(PostModel[] posts) {
+    public void setAdapterData(PostModel[] posts, String threadNumber) {
         this.clear();
 
         for (PostModel item : posts) {
+            //In case we are searching in single thread only,
+            // discard all posts that do not belong to this thread.
+            if(threadNumber != null){
+                if(!item.getParentThread().equals(threadNumber) && !item.getNumber().equals(threadNumber)){
+                    continue;
+                }
+            }
+
             if (item.getAttachments().size() != 0) {
                 AttachmentModel attachment = item.getAttachments().get(0);
                 String thumbnail = attachment.getThumbnailUrl();
